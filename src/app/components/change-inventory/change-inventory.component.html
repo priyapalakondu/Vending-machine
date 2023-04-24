@@ -1,0 +1,8 @@
+<div class="change-available">
+  <h3>Change available</h3>
+  <ul>
+    <li class="item" *ngFor="let item of change | keyvalue">
+      <div>{{item.key}}:{{item.value}}</div>
+    </li>
+  </ul>
+</div>

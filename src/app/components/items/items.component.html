@@ -1,0 +1,9 @@
+<table class="item-list">
+    <tr class="item" *ngFor="let item of items">
+      <td class="bold">{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.price | currency:'USD':'symbol' }}</td>
+      <td><button (click)="buyProduct(item)">Buy</button></td>
+    </tr>
+</table>
+

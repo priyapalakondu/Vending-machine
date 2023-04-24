@@ -1,0 +1,25 @@
+<div class="insert-coins">
+  <h2>Click to insert coins</h2>
+  <button class="button -yellow" (click)="addBalance(0.05)">05c</button>
+  <button class="button -blue" (click)="addBalance(0.1)">10c</button>
+  <button class="button -green" (click)="addBalance(0.25)">25c</button>
+  <button class="button -green" (click)="addBalance(1)">$1</button>
+</div>
+
+<div>
+  <p>
+    Total amount entered = 
+    {{
+      coinBalance ? (coinBalance | currency : "USD" : "symbol") : "INSERT COIN"
+    }}
+  </p>
+</div>
+
+<div *ngIf="insertedCoins.length > 0" class="inserted-coins">
+  <h3>Inserted Coins</h3>
+  <ul>
+    <li class="item" *ngFor="let insertedCoin of insertedCoins">
+      {{ insertedCoin | currency : "USD" : "symbol" }}
+    </li>
+  </ul>
+</div>
